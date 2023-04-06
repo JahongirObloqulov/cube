@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #304057;
+    height: 100vh;
+    width: 100vh;
+}
+
+.container {
+    margin-left: 250px;
+    perspective: 1200px;
+    height: 100%;
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.cube:hover {
+    position: absolute;
+    top: 310px;
+    cursor: pointer;
+}
+
+.cube {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateX(-20deg) rotateY(-45deg);
+    transform-style: preserve-3d;
+    width: 200px;
+    height: 200px;
+    transition-duration: 1s;
+
+}
+
+.cube div {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+}
+
+
+.f {
+    transform: translate3d(0, 0, 100px) rotate(-90deg);
+    background-color: rgba(102, 102, 102, 0.253);
+
+
+}
+
+.f::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: cube 3s ease-in-out infinite alternate;
+}
+
+.b {
+    transform: translate3d(0, 0, -99px) rotate(-90deg);
+    background-color: rgba(102, 102, 102, 0.253);
+}
+
+.b::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: cube 3s ease-in-out infinite alternate;
+}
+
+.l {
+    transform: translate3d(-99px, 0, 0) rotateY(-90deg) rotate(-90deg);
+    background-color: rgba(102, 102, 102, 0.253);
+}
+
+.l::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: cube 3s ease-in-out infinite alternate;
+}
+
+.r {
+    transform: translate3d(100px, 0, 0) rotateY(90deg) rotate(-90deg);
+    background-color: rgba(102, 102, 102, 0.253);
+}
+
+.r::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: cube 3s ease-in-out infinite alternate;
+}
+
+.t {
+    transform: translate3d(0, -100px, 0) rotateX(-90deg);
+    background-color: rgba(102, 102, 102, 0.07);
+}
+
+.p {
+    transform: translate3d(0, 100px, 0) rotateX(90deg);
+    box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.58);
+    transition-duration: .5s;
+
+}
+
+.cube:hover p {
+    box-shadow: 40px 40px 70px rgba(0, 0, 0, 1),
+        80px 80px 140px rgba(0, 0, 0, 1.5);
+}
+
+.p::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #2bbc63;
+}
+
+@keyframes cube {
+    0% {
+        background-color: #2bbc63;
+        width: 0;
+    }
+
+    100% {
+        background-color: #2bbc63;
+        width: 200px;
+    }
+}
